@@ -1,38 +1,172 @@
-.App {
+/* header */
+.header {
+  width: 90%;
+  color: #ffffff;
   text-align: center;
+  padding: 2rem 0rem;
+  margin: 1rem auto;
+  border-radius: 10px;
+  font-family: "Press Start 2P";
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(25px);
+  background-clip: border-box;
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.03);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header h1 {
+  line-height: 40px;
+  text-shadow: 1px 4px rgba(0, 0, 0, 0.073);
+}
+/* end header */
+
+/* body */
+.body__wrapper {
+  width: 45%;
+  padding: 2rem 2rem;
+  margin: 2rem auto;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(25px);
+  background-clip: border-box;
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.03);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form__wrapper {
+  width: 100%;
+  border-radius: 7px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
+.input__wrapper {
+  width: 100%;
+  padding: 0rem 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
+.input__field {
+  color: #777;
+  width: 100%;
+  border: none;
+  font-size: 18px;
+  padding: 1rem 0.5rem;
+  border-radius: 7px;
+}
+
+.input__wrapper .MuiSvgIcon-root {
+  cursor: pointer;
+  transition: color 200ms ease-in-out;
+  box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.073);
+}
+
+.input__wrapper .MuiSvgIcon-root:hover {
+  color: #ff0f93a9;
+}
+
+.todos__wrapper {
+  margin: 1rem 0rem;
+}
+
+.show__todos button {
+  width: 45px;
+  height: 45px;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  padding: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  background: #ffffff;
+  transition: color 200ms ease-in-out;
+  box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.073);
+}
+
+.show__todos button:hover {
+  color: #ff0f93a9;
+}
+
+.show__todos button .MuiSvgIcon-root {
+  transform: scale(0.9);
+  animation: scale 300ms ease-in-out 1 forwards;
+}
+
+@keyframes scale {
   from {
-    transform: rotate(0deg);
+    transform: scale(0.9);
   }
   to {
-    transform: rotate(360deg);
+    transform: scale(1.1);
+  }
+}
+
+.all__todos {
+  width: 100%;
+  margin: 0.5rem 0rem;
+}
+
+.each__todos {
+  opacity: 0;
+  color: #000000;
+  padding: 0.5rem;
+  margin: 0.5rem 0rem;
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+}
+
+.each__todos .MuiSvgIcon-root {
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.each__todos .MuiSvgIcon-root:hover {
+  color: #ff0037;
+}
+
+.stagger__added {
+  animation: stagger 600ms ease-in-out 400ms 1 forwards;
+}
+
+@keyframes stagger {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+/* end body */
+
+@media (max-width: 768px) {
+  .body__wrapper {
+    width: 75%;
+  }
+}
+
+@media (max-width: 571px) {
+  .header {
+    width: 95%;
+    padding: 1rem 0rem;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .body__wrapper {
+    width: 90%;
+    padding: 1rem 1rem;
   }
 }
